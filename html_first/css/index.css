@@ -1,0 +1,11 @@
+/* .logo a
+{  text-decoration: none; } */
+
+*{padding: 10;margin: 10;}
+
+.logo-link{
+    text-decoration: none;
+}
+.list-item{list-style: 0;}
+img{
+    width: 700;height: 700}
