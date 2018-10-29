@@ -1,0 +1,134 @@
+html{
+	box-sizing: border-box;
+}
+*,
+*::before,
+*::after{
+	box-sizing: inherit;
+}
+
+/* HEADING */
+.visually-hidden {
+	position: absolute;
+	clip: rect(1px, 1px, 1px, 1px);
+	padding: 0;
+	border: 0;
+	height: 1px; 
+	width: 1px; 
+	overflow: hidden;
+}
+/* NAVIGATION */
+.nav{
+	margin: 75px 0px 100px 0px;
+}
+.navigation{
+	width:900px;
+	text-align: center;
+	vertical-align: middle;
+	margin:0px;
+	padding:0px;
+	list-style:none;
+	margin: 0 auto;
+	
+}
+.navigation li{
+	display:inline-block;
+	margin-right: 110px;
+}
+.navigation li a{
+	font-family: 'Playfair Display', serif;
+	color:rgb(98,98,98);
+	text-decoration: none;
+}
+/* .navigation li:not(:last-child){
+	margin-right: 110px;
+} */
+.navigation li:last-child{
+	margin-right: 0px;
+}
+.navigation a:focus,
+.navigation a:hover{
+	color:blue;
+}
+/* MAIN */
+.container{
+	margin: 0 auto;
+	width: 900px;
+}
+.gallery{
+	margin-bottom: 72px;
+}
+.gallery-list{
+	margin: 0;
+	padding: 0;
+	
+	font-size: 0;	
+	list-style: none;
+}
+.gallery-list-item{
+	display:inline-block;
+	width: 420px;
+	margin-right: 60px;
+	margin-bottom: 130px;
+	
+	font-size: 14px;
+}
+.gallery-list-item:nth-child(2n){
+	margin-right: 0;
+}
+.gallery-list-item:nth-last-child(-n+2){
+	margin-bottom: 0;
+}
+.img{
+	width: 420px;
+	height: 280px;
+	margin-bottom: 30px;
+}
+.article-category{
+	font-size: 14px;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight:lighter;
+	color:rgb(98,98,98);
+	
+	margin-top: 0px;
+	margin-bottom: 30px;
+}
+h2{
+	font-size: 30px;
+	font-family: 'Playfair Display', serif;
+	color:rgb(98,98,98);
+	
+	margin-top: 0;
+	margin-bottom: 40px;
+}
+.article-description{
+	font-size: 14px;
+	font-family: 'Playfair Display', serif;
+	color:rgb(98,98,98);
+	
+	margin-top: 0;
+	margin-bottom: 0;
+}
+/* FOOTER */
+.footer{
+	width: 900px;
+	margin: 0 auto;
+	text-align: center;
+}
+.button{	
+	padding: 0;
+	margin: 0;
+	min-width: 266px;
+	min-height: 60px;
+
+	background-color: white;
+	border:1px solid black;
+	color:rgb(98,98,98);
+	font-family: 'Playfair Display', serif;
+	font-size: 20px;
+}
+.button:hover,
+.button:focus{
+	color:blue;
+	cursor: pointer;
+}
