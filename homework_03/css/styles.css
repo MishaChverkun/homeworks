@@ -6,7 +6,6 @@ html{
 *::after{
 	box-sizing: inherit;
 }
-
 /* HEADING */
 .visually-hidden {
 	position: absolute;
@@ -19,7 +18,7 @@ html{
 }
 /* NAVIGATION */
 .nav{
-	margin: 75px 0px 100px 0px;
+	padding: 75px 0px 100px 0px;
 }
 .navigation{
 	width:900px;
@@ -28,8 +27,7 @@ html{
 	margin:0px;
 	padding:0px;
 	list-style:none;
-	margin: 0 auto;
-	
+	margin: 0 auto;	
 }
 .navigation li{
 	display:inline-block;
@@ -37,18 +35,15 @@ html{
 }
 .navigation li a{
 	font-family: 'Playfair Display', serif;
-	color:rgb(98,98,98);
+	color:#686868;
 	text-decoration: none;
 }
-/* .navigation li:not(:last-child){
-	margin-right: 110px;
-} */
 .navigation li:last-child{
 	margin-right: 0px;
 }
 .navigation a:focus,
 .navigation a:hover{
-	color:blue;
+	color:#00f;
 }
 /* MAIN */
 .container{
@@ -61,7 +56,6 @@ html{
 .gallery-list{
 	margin: 0;
 	padding: 0;
-	
 	font-size: 0;	
 	list-style: none;
 }
@@ -70,7 +64,6 @@ html{
 	width: 420px;
 	margin-right: 60px;
 	margin-bottom: 130px;
-	
 	font-size: 14px;
 }
 .gallery-list-item:nth-child(2n){
@@ -88,24 +81,21 @@ html{
 	font-size: 14px;
 	font-family: 'Ubuntu', sans-serif;
 	font-weight:lighter;
-	color:rgb(98,98,98);
-	
+	color:#686868;
 	margin-top: 0px;
 	margin-bottom: 30px;
 }
 h2{
 	font-size: 30px;
 	font-family: 'Playfair Display', serif;
-	color:rgb(98,98,98);
-	
+	color:#686868;
 	margin-top: 0;
 	margin-bottom: 40px;
 }
 .article-description{
 	font-size: 14px;
 	font-family: 'Playfair Display', serif;
-	color:rgb(98,98,98);
-	
+	color:#686868;
 	margin-top: 0;
 	margin-bottom: 0;
 }
@@ -120,15 +110,14 @@ h2{
 	margin: 0;
 	min-width: 266px;
 	min-height: 60px;
-
-	background-color: white;
-	border:1px solid black;
-	color:rgb(98,98,98);
+	background-color:#fff;
+	border:1px solid #111;
+	color:#686868;
 	font-family: 'Playfair Display', serif;
 	font-size: 20px;
 }
 .button:hover,
 .button:focus{
-	color:blue;
+	color:#00f;
 	cursor: pointer;
 }
