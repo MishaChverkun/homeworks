@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const passwords = ["qwerty", "111qwe", "123123", "r4nd0mp4zzw0rd"];
+      let attempts = 3;
+
+      do {
+        let userPassword = prompt("Please, enter your password");
+        if (userPassword === null) {
+          break;
+        }
+        for (let i = 0, max = passwords.length; i < max; i++) {
+          if (userPassword === passwords[i]) {
+            alert("You are welcome!");
+            attempts = -1;
+          }
+        }
+        if (attempts < 0) {
+          break;
+        }
+        attempts--;
+        if (attempts === 0) {
+          alert("Your attempts have ended, your account has been blocked!");
+          break;
+        } else {
+          alert("Wrong password, you have " + attempts + " attempts left");
+        }
+      } while (attempts !== 0);
+    </script>
+  </body>
+</html>
