@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const logins = [
+        "Mango",
+        "robotGoogles",
+        "Poly",
+        "Aj4x1sBozz",
+        "qwerty123"
+      ];
+
+      const isLoginValid = function(login) {
+        if (login.length >= 4 && login.length <= 16) {
+          return true;
+        } else {
+          alert("Mistake! Login must be from 4 to 16 characters");
+          return false;
+        }
+      };
+
+      const isLoginUnique = function(allLogins, login) {
+        let counter = 0;
+        for (let i = 0, max = allLogins.length; i < max; i++) {
+          if (login === allLogins[i]) {
+            alert("This login is already in use!");
+            return false;
+          } else {
+            counter++;
+            if (counter === allLogins.length) {
+              alert("Login successfully added!");
+              return true;
+            }
+          }
+        }
+      };
+
+      const addLogin = function(allLogins, login) {
+        if (isLoginValid(login)) {
+          if (isLoginUnique(allLogins, login)) {
+            allLogins.push(login);
+            console.log(allLogins);
+            console.log(login);
+          }
+        }
+        return;
+      };
+      let userLogin = prompt("Enter login");
+      addLogin(logins, userLogin);
+    </script>
+  </body>
+</html>
