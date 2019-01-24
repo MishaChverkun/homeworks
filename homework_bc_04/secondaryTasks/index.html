@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      //______________________________Task №1______________________________
+      /*
+          Напишите скрипт, который, для объекта user, последовательно:
+          - добавляет поле mood со значением 'happy'
+          - заменяет значение hobby на 'javascript'
+          - удаляет свойство premium
+          - выводит содержимое объекта user в формате ключ:значение
+            используя цикл for...in
+          - выводит содержимое объекта user в формате ключ:значение
+            используя Object.keys и for...of
+          - выводит содержимое объекта user в формате ключ:значение
+            используя Object.entries и for...of
+      */
+      //   const user = {
+      //     name: "Mango",
+      //     age: 20,
+      //     hobby: "html",
+      //     premium: true
+      //   };
+
+      //   user.mood = "happy";
+      //   user.hobby = "javascript";
+      //   delete user.premium;
+      //   for (let key in user) {
+      //     console.log(`${key}: ${user[key]}`);
+      //   }
+
+      //   for (let el of Object.keys(user)) {
+      //     console.log(`${el}: ${user[el]}`);
+      //   }
+
+      //   for (let el of Object.entries(user)) {
+      //     console.log(`${el[0]}: ${el[1]}`);
+      //   }
+
+      //______________________________Task №2______________________________
+
+      /*
+        Напиште скрипт который определит и выведет в консоль
+        имя сотрудника который выполнил больше всех задач.
+
+        Сотрудники и кол-во выполненых задач содержатся
+        как свойства объекта в формате "имя":"кол-во задач"
+      */
+
+      // const tasksCompleted = {
+      //   ann: 29,
+      //   david: 35,
+      //   helen: 1,
+      //   lorence: 99
+      // };
+      // let maxTasks = 0;
+      // let maxName = "";
+      // for (let key in tasksCompleted) {
+      //   if (tasksCompleted[key] > maxTasks) {
+      //     maxTasks = tasksCompleted[key];
+      //     maxName = key;
+      //   }
+      // }
+      // console.log(maxName);
+
+      //______________________________Task №3______________________________
+
+      /*
+        Напишите функцию countProps(obj),
+        считающую кол-во свойств в объекте.
+        Функция возвращает количество свойств.
+      */
+
+      // function countProps(obj) {
+      //   return Object.keys(obj).length;
+      // }
+      // // Вызовы функции для проверки
+      // console.log(countProps({})); // 0
+      // console.log(countProps({ a: 1, b: 3, c: "hello" })); // 3
+
+      //______________________________Task №4______________________________
+
+      /*
+        Создайте функцию isObjectEmpty(obj), которая получает
+        один аргумент obj - объект, и проверяет пуст ли он (есть ли в нем свойства).
+
+        Возвращает true если объект пустой, false если не пустой.
+      */
+
+      // function isObjectEmpty(obj) {
+      //   return Object.keys(obj).length === 0 ? true : false;
+      // }
+      // // Вызовы функции для проверки
+      // console.log(isObjectEmpty({})); // true
+      // console.log(isObjectEmpty({ a: 1 })); // false
+      // console.log(isObjectEmpty({ a: 1, b: 2 })); // false
+
+      //______________________________Task №5______________________________
+
+      /*
+        Напишите функцию countTotalSalary(salaries),
+        получающую объект и считающую общую сумму запрплаты работников.
+
+        Каждое поле объекта передаваемого в функцию, имеет вид "имя":"зарплата"
+
+        Функция возвращает общую сумму зарплаты.
+      */
+
+      //______________Worse Variant____________
+      // function countTotalSalary(salaries) {
+      //   let salaryArr = Object.values(salaries);
+      //   let sum = 0;
+      //   for (let el of salaryArr) {
+      //     sum += el;
+      //   }
+      //   return sum;
+      // }
+
+      //______________Better Variant____________
+      // function countTotalSalary(salaries) {
+      //   let valueArr = Object.values(salaries);
+      //   console.log(valueArr);
+      //   let result = valueArr.reduce((acc, el) => acc + el, 0);
+      //   return result;
+      // }
+      // Вызовы функции для проверки
+      // console.log(countTotalSalary({})); // 0
+      // console.log(
+      //   countTotalSalary({
+      //     mango: 100,
+      //     poly: 150,
+      //     alfred: 80
+      //   })
+      // ); // 330
+
+      //______________________________Task №6______________________________
+
+      /*
+        Напишите функцию getAllPropValues(arr, prop),
+        которая получает массив объектов и имя ключа,
+        возвращает массив значений определенного поля prop
+        из каждого объекта в массиве
+      */
+
+      // const users = [
+      //   { name: "Poly", age: 7, mood: "happy" },
+      //   { name: "Mango", age: 4, mood: "blissful" },
+      //   { name: "Ajax", age: 3, mood: "tired" }
+      // ];
+      // function getAllPropValues(arr, prop) {
+      //   let valuesArr = [];
+      //   let values;
+      //   for (let el of users) {
+      //     for (let key in el) {
+      //       if (key === prop) {
+      //         values = el[key];
+      //         valuesArr.push(values);
+      //       }
+      //     }
+      //   }
+      //   return valuesArr;
+      // }
+      // Вызовы функции для проверки
+      // console.log(getAllPropValues(users, "name")); // ['Poly', 'Mango', 'Ajax']
+      // console.log(getAllPropValues(users, "mood")); // ['happy', 'blissful', 'tired']
+      // console.log(getAllPropValues(users, "active")); // []
+
+      //______________________________Task №7______________________________
+
+      /*
+        Напишите код, который бы  с помощью
+        функции-конструкора User, позволял создавать
+        объекты пользователя со следующим свойствами:
+          - name - строка (имя)
+          - isActive - буль (активен)
+          - age - число (возраст)
+          - friends - число (кол-во друзей)
+
+        Имя, активность, возраст и друзей, необходимо передать
+        как аргументы при вызове конструктора.
+
+        Добавить метод getUserInfo(), которая, выводит строку:
+        `User ${имя} is ${возраст} years old and has ${кол-во друзей} friends`
+
+        Создать несколько объектов пользователя User и с помощью
+        функции getUserInfo вывести строку в консоль.
+      */
+
+      // function User(name, isActive, age, friends) {
+      //   this.name = name;
+      //   this.isActive = isActive;
+      //   this.age = age;
+      //   this.friends = friends;
+      //   this.getUserInfo = function() {
+      //     return `User ${this.name} is ${this.age} years old and has ${this.friends} friends`;
+      //   };
+      // }
+      // const misha = new User("Misha", true, 18, 30);
+      // console.log(misha.getUserInfo());
+
+      //______________________________Task №8______________________________
+
+      /*  
+        Расставьте отсутствующие this в методах объекта store
+      */
+
+      // const store = {
+      //   products: ["bread", "cheese", "milk", "apples"],
+      //   managers: ["poly", "mango", "ajax"],
+      //   addManager(manager) {
+      //     this.managers.push(manager);
+
+      //     console.log(this.managers);
+      //   },
+      //   removeManager(manager) {
+      //     const idx = this.managers.indexOf(manager);
+
+      //     this.managers.splice(idx, 1);
+
+      //     console.log(this.managers);
+      //   },
+      //   getProducts() {
+      //     console.log(this.products);
+
+      //     return this.products;
+      //   }
+      // };
+
+      // store.addManager("chelsey"); // ['poly', 'mango', 'ajax', 'chelsey']
+      // store.removeManager("mango"); // ['poly', ajax', 'chelsey']
+      // store.getProducts(); // ['bread', 'cheese', 'milk', 'apples']
+
+      //______________________________Task №9______________________________
+
+      /*  
+        Расставьте отсутствующие this в конструкторе объектов Account
+      */
+
+      //   function Account(login, password, type = "regular") {
+      //     this.login = login;
+      //     this.password = password;
+      //     this.type = type;
+
+      //     this.changePassword = function(newPassword) {
+      //       this.password = newPassword;
+
+      //       console.log(this.password);
+      //     };
+
+      //     this.getAccountInfo = function() {
+      //       console.log(`
+      //   Login: ${this.login},
+      //   Pass: ${this.password},
+      //   Type: ${this.type}
+      // `);
+      //     };
+      //   }
+
+      //   const account = new Account("Mango", "qwe123", "premium");
+      //   console.log(account.login); // 'Mango'
+      //   console.log(account.password); // 'qwe123'
+      //   console.log(account.type); // 'premium'
+      //   account.changePassword("asdzxc"); // 'asdzxc'
+      //   account.getAccountInfo(); // Login: 'Mango', Pass: 'asdzxc', Type: 'premium'
+
+    </script>
+  </body>
+</html>
